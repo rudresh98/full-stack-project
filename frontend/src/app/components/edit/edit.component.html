@@ -1,0 +1,112 @@
+<div class="container mt-3">
+  <form [formGroup]="createFormGroup">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">title</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="title"
+            aria-label="title"
+            aria-describedby="basic-addon1"
+            formControlName="title"
+            (keyup)="onTitleChangeHandler()"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon2">description</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="description"
+            aria-label="description"
+            aria-describedby="basic-addon1"
+            formControlName="description"
+            (keyup)="onDescChangeHandler()"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="status">status</span>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            aria-describedby="status"
+            formControlName="status"
+          >
+            <option selected value="completed">completed</option>
+            <option value="not completed">not completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="priority">priority</span>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            aria-describedby="priority"
+            formControlName="priority"
+          >
+            <option value="minor">minor</option>
+            <option value="major">major</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckChecked"
+            formControlName="active"
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            active
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="date">date</span>
+          <input
+            type="date"
+            class="form-control"
+            placeholder="date"
+            aria-label="date"
+            aria-describedby="date"
+            formControlName="date"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <button
+            class="btn btn-success"
+            (click)="submitHandler()"
+            [disabled]="checkButton"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

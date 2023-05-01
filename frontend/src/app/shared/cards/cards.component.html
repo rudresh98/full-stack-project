@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md mt-lg-4 mt-md-2 mt-sm-1">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">{{ title }}</h5>
+            <span> <b>Last Updated</b>:- {{ lastUpdated | customdate }}</span>
+          </div>
+          <h6 class="card-subtitle mb-2 text-body-secondary mt-2">
+            <b>Priority</b>
+            <span
+              class="border px-3 py-1 mx-3"
+              [ngClass]="{
+                'border-danger text-danger ':
+                  priority.toLowerCase() === 'major',
+                'border-success text-success ':
+                  priority.toLowerCase() === 'minor'
+              }"
+              >{{ priority }}</span
+            >
+          </h6>
+          <p class="card-text">
+            {{ description }}
+          </p>
+          <p
+            class="border px-3 py-1 mx-3"
+            [ngClass]="{
+              'border-danger text-danger ':
+                status.toLowerCase() !== 'completed',
+              'border-success text-success ':
+                status.toLowerCase() === 'completed'
+            }"
+          >
+            Status {{ status }}
+          </p>
+          <a
+            class="btn btn-success"
+            role="button"
+            [routerLink]="['details', id]"
+            >Details</a
+          >
+          <button
+            type="button"
+            class="btn btn-danger mx-lg-3 mx-md-2"
+            (click)="onDeleteHandler(id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
